@@ -8,9 +8,9 @@ RUN apt-get update && \
     apt-get install sudo dos2unix
 
 ENV HOME /home/groot
-ENV INSIDE_DOCKER="yes"
+ENV INSIDE_DOCKER="no"
 
-RUN adduser --disabled-password --home $HOME --shell /bin/bash --gecos '' groot && \
+RUN adduser --disabled-password --home $/home/groot --shell /bin/zsh --gecos '' groot && \
     echo 'groot ALL=(ALL) NOPASSWD:ALL' >>/etc/sudoers && \
     su groot
 
@@ -28,4 +28,4 @@ RUN mkdir build &&\
     cmake .. && \
     cmake --build .
 
-CMD [ "bash" ]
+CMD [ "zsh" ]
